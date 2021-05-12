@@ -2,16 +2,24 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class RecipeBook(models.Model):
-    recipe = models.TextField(max_length=300, blank=False, null=False)
+# class User(AbstractUser):
+#     name = models.CharField(max_length=50, null=True)
     
-    # label = models.TextField(max_length=100, blank=False, null=False)
-    # image = models.TextField(max_length=32, blank=False, null=False)
-    # url = models.TextField(max_length=32, blank=False, null=False)
-    # calories = models.IntegerField(default=0,blank=False, null=False)
-    # carbs = models.IntegerField(blank=False, null=False)
-    # protein = models.IntegerField(blank=False, null=False)
-    # servings = models.IntegerField(blank=False, null=False)
+
+#     def __str__(self):
+#         return f'{self.id}: {self.username}'
+
+
+class Recipe(models.Model):
+    # recipe = models.TextField(max_length=300, blank=False, null=False)
+    
+    label = models.CharField(max_length=100, null=True)
+    image = models.CharField(max_length=32, null=True)
+    url = models.CharField(max_length=32, null=True)
+    calories = models.CharField(max_length=32, default=0, null=True)
+    carbs = models.CharField(max_length=32, null=True)
+    protein = models.CharField(max_length=32, null=True)
+    servings = models.CharField(max_length=32, null=True)
 
     def __str__(self):
         return f'{self.id}: {self.label}'
@@ -19,8 +27,8 @@ class RecipeBook(models.Model):
 
 # Would I make a user model with a foreign key for the recipe book? Need to figure this out, then make migrations and then migrate to create relationship.
 class FavoriteRecipe(models.Model):
-    recipebook = models.ForeignKey(RecipeBook, related_name='favorites', on_delete=models.CASCADE)
+    recipe = models.ForeignKey(Recipe, related_name='favorites', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='favorites', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.id}: {self.recipebook} {self.user}' 
+        return f'{self.id}: {self.recipe} {self.user}' 
