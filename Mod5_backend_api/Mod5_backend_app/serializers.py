@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
-from .models import RecipeBook
+from .models import RecipeBook, FavoriteRecipe
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,5 +17,13 @@ class UserSerializer(serializers.ModelSerializer):
 class RecipeBookSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeBook
-        fields = ['id', 'title']
+        fields = ['id', 'recipe']
         
+
+class FavoriteRecipeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FavoriteRecipe
+        fields = '__all__'
+
+
+# image','label', 'url', 'calories', 'carbs', 'protein', 'servings
