@@ -28,7 +28,7 @@ I used an external recipe and nutrition API to pull in data on different recipes
 * From the backend, open up the api and activate with source venv/bin/activate. 
 * Then enter into the Mod5_backend_api and run python manage.py runserver to kick off the server.
 * Open in VS code or other text editor if you'd like to see the code.
-* Fork and clone the front end. Open it and run the front end with npm start.
+* Fork and clone the front end. Open it and run the frontend with npm start.
 * From there, create an account, login and have fun looking up recipes for ingredients that you have on hand. Note that you can see a list of all the ingredients on the back of the recipe cards.
 * You can also save a recipe to your recipe book to find later. 
 
