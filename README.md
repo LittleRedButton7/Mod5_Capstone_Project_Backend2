@@ -14,9 +14,6 @@ Make something with what you have in a pinch!
 ## General Info
 I used an external recipe and nutrition API to pull in data on different recipes and include ingredients and nutrition. My thought was to make a website where you can put in a list of ingredients that you have on hand or need to use up and find recipes that match as well as meet your nutritional needs.
 
-<!-- ## Intro Video
-
-
 ## Technologies
 * Django
 * SQLite3 - version 1.4
