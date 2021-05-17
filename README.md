@@ -99,7 +99,7 @@ class RecipeBookSerializer(serializers.ModelSerializer):
 * Recipe search function allows you to search by ingredients that you have on hand and returns a list of results.     
     * Each recipe card flips and you can see a full list of ingredients. This was designed as such because that way you can tell if you have everything without having to open the full link. This is an effort to make selecting a recipe you can make with what you have easier and quicker to find.
     * Also on the back of the card is an option to save the recipe to your recipe book. There is a link at the top that will take you to your saved recipes for reference later. 
-    *Additionally, there is a link on the back of the recipe card that will take you to the full recipe. This is an external link.
+    * Additionally, there is a link on the back of the recipe card that will take you to the full recipe. This is an external link.
 
 ## Status
 This is a full stack, functioning app. However, at the moment you have to fork and clone both the frontend and the backend to get it working correctly. Eventually, I would like to deploy this live so people can access it through a functioning URL.
